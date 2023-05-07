@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HodlInfo</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <h1 style="font-size: 40px;">HODLINFO</h1>
+
+  <div class="text-center">
+    <div class="btn-group">
+      <button type="button">INR</button>
+      <button type="button">BTC</button>
+      <button type="button">BUY BTC</button>
+    </div>
+
+    <div class="container">
+      <div class="container-fluid">
+        <div class="text-center">
+          <div class="color-green">0.08 %</div>
+          <div class="subHeading">5 Mins</div>
+
+        </div>
+        <div class="text-center">
+          <div class="color-green">0.35 %</div>
+          <div class="subHeading">1 Hour</div>
+
+        </div>
+
+        <div style="max-width: 40%;">
+          <div class="text-center">
+            <div class="average-subText">
+              Best Price to Trade
+            </div>
+            <div class="average-heading" style="padding-bottom: 10px;">₹ 25,78,591</div>
+            <div class="subHeading">Average BTC/INR net price including commission</div>
+          </div>
+        </div>
+
+
+        <div class="text-center">
+          <div class="color-green">0.54 %</div>
+          <div class="subHeading">1 Day</div>
+
+        </div>
+        <div class="text-center">
+          <div class="color-green">3.73 %</div>
+          <div class="subHeading">7 Days</div>
+
+        </div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+
+        <tr>
+          <th>Name</th>
+          <th>Last</th>
+          <th>Buy</th>
+          <th>Sell</th>
+          <th>Volume</th>
+          <th>Base Unit</th>
+        </tr>
+
+      </thead>
+      <tbody id="ticker-table-body">
+        <!-- Ticker data will be inserted here -->
+      </tbody>
+    </table>
+
+    <script>
+      // Make a GET request to the server to fetch the ticker data
+      fetch('http://localhost:3000/api/tickers')
+        .then((res) => res.json())
+        .then((data) => {
+          const tickerTableBody = document.getElementById('ticker-table-body')
+          console.log(data)
+          // Loop through the ticker data and create a table row for each ticker
+          data.forEach((ticker) => {
+            const tr = document.createElement('tr')
+            tr.innerHTML = `
+              <td>${ticker.name}</td>
+              <td>${ticker.last}</td>
+              <td>${ticker.buy}</td>
+              <td>${ticker.sell}</td>
+              <td>${ticker.volume}</td>
+              <td>${ticker.base_unit}</td>
+            `;
+            tickerTableBody.appendChild(tr)
+          })
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    </script>
+</body>
+
+</html>

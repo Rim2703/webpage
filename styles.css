@@ -1,0 +1,95 @@
+body {
+    background-color: #191d28;
+    color: #3dc6c1;
+    font-family: Oswald, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    /* border-bottom: 1px solid #ddd; */
+    padding: 10px;
+
+}
+
+th {
+    color: #6c757d;
+    font-size: 25px;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    /* background-color: #2e3241; */
+    color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+
+.text-center {
+    text-align: center !important;
+}
+
+.btn-group button {
+    display: inline-flex;
+    cursor: pointer;
+    background-color: #2e3241;
+    color: #fff;
+    border-radius: 15px;
+    height: 35px;
+    width: 7%;
+    padding: 5px;
+    margin: 10px;
+    justify-content: center;
+}
+
+.container {
+    display: block;
+    margin: 2px;
+    height: 180px;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.subHeading {
+    color: #6c757d;
+
+}
+
+.average-heading {
+    font-size: 70px;
+    color: #fff;
+}
+
+.average-subText {
+    font-size: 25px;
+    color: #6c757d;
+
+}
+
+#ticker-table-body {
+    background-color: #2e3241;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+}
+
+.color-green {
+    font-size: 25px;
+}
